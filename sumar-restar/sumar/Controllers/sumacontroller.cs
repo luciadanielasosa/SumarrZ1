@@ -12,6 +12,7 @@ namespace sumar.Controllers
     public class sumacontroller : ControllerBase
     {
         [HttpGet]
+        [Route("Add")]
         public int Add(int a, int b)
         {
             return a + b;
@@ -20,6 +21,18 @@ namespace sumar.Controllers
         public int Add2([FromHeader]int a, [FromHeader]int b)
         {
             return a + b;
+        }
+        [HttpGet]
+        [Route("Multiply")]
+        public int Mul(int a, int b)
+        {
+            return a * b;
+        }
+        [HttpPost]
+        [Route("Multiply")]
+        public int Mul2([FromHeader] int a, [FromHeader] int b)
+        {
+            return a * b;
         }
     }
 }
